@@ -1,0 +1,20 @@
+# Игнорирование виртуального окружения
+venv/
+.env
+*.pyc
+pycache/
+
+# Игнорирование зависимостей
+Pipfile
+Pipfile.lock
+requirements.txt
+
+# Логи и артефакты сборки
+logs/
+*.log
+dist/
+build/
+*.egg-info/
+
+# Временные файлы MacOS
+.DS_Store
