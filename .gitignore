@@ -18,3 +18,6 @@ build/
 
 # Временные файлы MacOS
 .DS_Store
+
+# файлы Idea
+.idea/
