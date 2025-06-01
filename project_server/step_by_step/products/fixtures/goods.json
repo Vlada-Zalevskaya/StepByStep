@@ -1,0 +1,74 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "Худи EXHAUST WEAR",
+      "description": "Худи унисекс утепленный из трехнитчатого футера, красочным принтом или вышивкой на груди в JDM стиле и рукавами реглан.",
+      "price": "4650.00",
+      "quantity": 10,
+      "image": "products_images/exaust_hoodie.webp",
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "name": "Куртка The North Face FANTASY RIDGE Leo Yellow/Grey",
+      "description": "Выполнена из полностью непроницаемого для воды и ветра материала DryVent, который при этом отлично дышит и отводит влагу от тела.",
+      "price": "16990.00",
+      "quantity": 10,
+      "image": "products_images/FANTASY_RIDGE.jpg",
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "name": "Брюки спортивные EXHAUST WEAR",
+      "description": "Повседневные брюки унисекс из качественного трех нитчатого футера без начёса.",
+      "price": "4300.00",
+      "quantity": 0,
+      "image": "products_images/exaust.webp",
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "name": "Кроссовки Nike SF AF1",
+      "description": "В данной экстравагантной ультра-высокой вариации используется кожа и баллистический нейлон.",
+      "price": "19990.00",
+      "quantity": 10,
+      "image": "products_images/Nike_SF.jpg",
+      "category": 2
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "name": "Лонгслив оверсайз с принтом",
+      "description": "Это идеальная футболка с длинным рукавом для мужчин и женщин, созданная из 100% премиального хлопка.",
+      "price": "2070.00",
+      "quantity": 10,
+      "image": "products_images/longsleeve.webp",
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "name": "Кроссовки Nike Undercover x Air Force 1 Low SP GORE-TEX Grey Fog",
+      "description": "Обновленная версия знаменитых Nike Air Force 1 — коллаборация с брендом Джуна Такахаши Undercover.",
+      "price": "17400.00",
+      "quantity": 10,
+      "image": "products_images/Nike_Undercover.jpg",
+      "category": 2
+    }
+  }
+]
