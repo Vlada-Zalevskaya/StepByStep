@@ -7,7 +7,6 @@ pycache/
 # Игнорирование зависимостей
 Pipfile
 Pipfile.lock
-requirements.txt
 
 # Логи и артефакты сборки
 logs/

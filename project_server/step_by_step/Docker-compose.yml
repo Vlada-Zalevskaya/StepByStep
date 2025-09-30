@@ -12,36 +12,33 @@ services:
       LC_ALL: en_US.UTF-8
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    expose:
+      - "5433"
     ports:
-      - "5432:5432"
+      - "5433:5433"
+    command: -p 5433
   web:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      DB_NAME: store_db
+      DB_USER: store_username
+      DB_PASS: store_password
+      DB_HOST: db
+      DB_PORT: 5433
     volumes:
       - .:/app
     ports:
       - "8000:8000"
     depends_on:
       - db
-  pgadmin:
-    image: dpage/pgadmin4:latest
-    container_name: pgadmin
-    restart: unless-stopped
-    environment:
-      - DEBUG=1
-      - DJANGO_ALLOWED_HOSTS=localhost
-      - DATABASE_NAME=store_db
-      - DATABASE_USER=store_username
-      - DATABASE_PASSWORD=store_password
-      - DATABASE_HOST=db
-      - DATABASE_PORT=5432
 
-  volumes:
-    postgres_data:
-    static_volume:
-    media_volume:
-    pgadmin_data:
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
+  pgadmin_data:
 
-  networks:
-    app_network:
-      driver: bridge
+networks:
+  app_network:
+    driver: bridge
