@@ -87,5 +87,8 @@ def profile(request):
 @permission_classes([IsAuthenticated])
 @authentication_classes([CookieJWTAuthentication])
 def logout(request):
+  response = HttpResponseRedirect(reverse('index'))
+  response.set_cookie('refresh', '', httponly=True, max_age=3600)
+  response.set_cookie('access', '', httponly=True, max_age=3600)
   auth.logout(request)
-  return HttpResponseRedirect(reverse('index'))
+  return response
