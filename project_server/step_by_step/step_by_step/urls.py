@@ -19,6 +19,8 @@ from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
+from rest_framework_simplejwt.views import TokenRefreshView, TokenObtainPairView
+
 from products.views import index
 from orders.views import stripe_webhook_view
 
@@ -29,6 +31,8 @@ urlpatterns = [
     path('users/', include('users.urls', namespace='users')),
     path('orders/', include('orders.urls', namespace='orders')),
     path('webhook/stripe/', stripe_webhook_view, name='stripe_webhook'),
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
 ]
 
 if settings.DEBUG == True:

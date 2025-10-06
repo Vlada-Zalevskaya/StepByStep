@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 import os
 from pathlib import Path
+from datetime import timedelta
 
 from django.conf.global_settings import STATICFILES_DIRS, MEDIA_URL, MEDIA_ROOT, AUTH_USER_MODEL, LOGIN_URL
 
@@ -46,8 +47,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.humanize',
+    'rest_framework',
+    'rest_framework_simplejwt',
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',#'users.authentication.CookieJWTAuthentication',
+    ),
+}
 
 
 MIDDLEWARE = [
@@ -92,7 +100,7 @@ DATABASES = {
         'USER': os.getenv('DB_USER', 'store_username'),
         'PASSWORD': os.getenv('DB_PASS', 'store_password'),
         'HOST': os.getenv('DB_HOST', '127.0.0.1'),
-        'PORT': os.getenv('DB_PORT', '5432'),
+        'PORT': os.getenv('DB_PORT', '5433'),
     }
 }
 
